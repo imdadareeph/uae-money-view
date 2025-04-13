@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { Navbar } from '@/components/Navbar';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
+import { AppLayout } from '@/components/AppLayout';
+
+interface SettingsItemProps {
+  title: string;
+  subtitle?: string;
+}
 
 export default function SettingsScreen() {
   return (
-    <View style={styles.container}>
-      <Navbar />
+    <AppLayout>
+      <StatusBar backgroundColor="#10B981" barStyle="light-content" />
       <ScrollView style={styles.content}>
         <Text style={styles.sectionTitle}>Account</Text>
         <View style={styles.section}>
@@ -29,11 +34,11 @@ export default function SettingsScreen() {
           <SettingsItem title="About" />
         </View>
       </ScrollView>
-    </View>
+    </AppLayout>
   );
 }
 
-function SettingsItem({ title, subtitle }) {
+function SettingsItem({ title, subtitle }: SettingsItemProps) {
   return (
     <TouchableOpacity style={styles.settingsItem}>
       <View>
@@ -46,10 +51,6 @@ function SettingsItem({ title, subtitle }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8FAFC',
-  },
   content: {
     flex: 1,
     padding: 16,

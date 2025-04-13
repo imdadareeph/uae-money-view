@@ -7,7 +7,7 @@ import { BudgetProgress } from '@/components/BudgetProgress';
 import { ExpenseChart } from '@/components/ExpenseChart';
 import { TransactionList } from '@/components/TransactionList';
 import { BankBalance } from '@/components/BankBalance';
-import { Navbar } from '@/components/Navbar';
+import { AppLayout } from '@/components/AppLayout';
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -32,9 +32,8 @@ export default function HomeScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <AppLayout>
       <StatusBar backgroundColor="#10B981" barStyle="light-content" />
-      <Navbar />
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <BankBalance />
         <SpendingSummary />
@@ -42,15 +41,11 @@ export default function HomeScreen() {
         <ExpenseChart />
         <TransactionList />
       </ScrollView>
-    </View>
+    </AppLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8FAFC',
-  },
   scrollView: {
     flex: 1,
   },

@@ -1,26 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Navbar } from '@/components/Navbar';
+import { View, Text, StyleSheet, ScrollView, StatusBar } from 'react-native';
+import { AppLayout } from '@/components/AppLayout';
 
 export default function BillsScreen() {
   return (
-    <View style={styles.container}>
-      <Navbar />
+    <AppLayout>
+      <StatusBar backgroundColor="#10B981" barStyle="light-content" />
       <ScrollView style={styles.content}>
         <View style={styles.section}>
           <Text style={styles.title}>Bills</Text>
           <Text style={styles.subtitle}>Manage your bills and payments</Text>
         </View>
       </ScrollView>
-    </View>
+    </AppLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8FAFC',
-  },
   content: {
     flex: 1,
     padding: 16,
