@@ -8,11 +8,6 @@ import {
   StatusBar,
   Image
 } from 'react-native';
-import { 
-  ArrowLeft, 
-  Edit, 
-  MoreVertical
-} from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Navbar } from '@/components/Navbar';
@@ -122,34 +117,14 @@ export default function AccountsScreen() {
   
   return (
     <View style={[styles.container, { paddingBottom: insets.bottom }]}>
-      <StatusBar backgroundColor="#8BC34A" barStyle="light-content" />
+      <StatusBar backgroundColor="#10B981" barStyle="light-content" />
       <Navbar />
       
-      {/* Header */}
-      <View style={styles.header}>
-        <View style={styles.headerTop}>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => router.back()}
-          >
-            <ArrowLeft color="#fff" size={24} />
-          </TouchableOpacity>
-          
-          <View style={styles.headerActions}>
-            <TouchableOpacity style={styles.editButton}>
-              <Edit color="#fff" size={24} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.moreButton}>
-              <MoreVertical color="#fff" size={24} />
-            </TouchableOpacity>
-          </View>
-        </View>
-        
-        <View style={styles.balanceContainer}>
-          <Text style={styles.balanceLabel}>Current Total Balance</Text>
-          <Text style={styles.accountsCount}>{BANK_ACCOUNTS.length} Accounts</Text>
-          <Text style={styles.totalBalance}>AED {totalBalance.toLocaleString()}</Text>
-        </View>
+      {/* Balance Summary */}
+      <View style={styles.balanceSummary}>
+        <Text style={styles.balanceLabel}>Current Total Balance</Text>
+        <Text style={styles.accountsCount}>{BANK_ACCOUNTS.length} Accounts</Text>
+        <Text style={styles.totalBalance}>AED {totalBalance.toLocaleString()}</Text>
       </View>
       
       {/* Tabs */}
@@ -203,45 +178,24 @@ export default function AccountsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F8FAFC',
   },
-  header: {
-    backgroundColor: '#8BC34A',
-    paddingTop: 50,
+  balanceSummary: {
+    backgroundColor: '#10B981',
+    padding: 20,
+    paddingTop: 16,
     paddingBottom: 20,
-    paddingHorizontal: 16,
-  },
-  headerTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
-  },
-  backButton: {
-    padding: 5,
-  },
-  headerActions: {
-    flexDirection: 'row',
-  },
-  editButton: {
-    padding: 5,
-    marginRight: 10,
-  },
-  moreButton: {
-    padding: 5,
-  },
-  balanceContainer: {
-    paddingHorizontal: 10,
   },
   balanceLabel: {
     fontSize: 16,
     color: '#FFFFFF',
-    opacity: 0.8,
+    opacity: 0.9,
   },
   accountsCount: {
     fontSize: 14,
     color: '#FFFFFF',
-    opacity: 0.7,
+    opacity: 0.8,
     marginBottom: 5,
   },
   totalBalance: {
@@ -261,7 +215,7 @@ const styles = StyleSheet.create({
   },
   activeTab: {
     borderBottomWidth: 3,
-    borderBottomColor: '#8BC34A',
+    borderBottomColor: '#10B981',
   },
   tabText: {
     fontSize: 12,
@@ -269,7 +223,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   activeTabText: {
-    color: '#8BC34A',
+    color: '#10B981',
     fontWeight: 'bold',
   },
   accountsList: {
