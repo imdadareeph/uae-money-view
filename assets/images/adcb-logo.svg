@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="M120,100 L160,100 L160,120 L120,120 Z" fill="#E20613"/>
+  <path d="M40,100 L110,100 L110,120 L40,120 Z" fill="#000000"/>
+  <text x="40" y="115" font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF">ADCB</text>
+</svg>

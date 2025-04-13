@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "bolt-expo-nativewind",
-    "slug": "bolt-expo-nativewind",
+    "name": "UAE Expense Tracker",
+    "slug": "uae-expense-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "uaemoneyview",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

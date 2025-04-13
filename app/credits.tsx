@@ -2,8 +2,11 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, StatusBar, TouchableOpacity } from 'react-native';
 import { AppLayout } from '@/components/AppLayout';
 import { Award, ChevronRight } from 'lucide-react-native';
+import { useRouter } from 'expo-router';
 
 export default function CreditsScreen() {
+  const router = useRouter();
+
   return (
     <AppLayout>
       <StatusBar backgroundColor="#10B981" barStyle="light-content" />
@@ -65,7 +68,7 @@ export default function CreditsScreen() {
             <View style={styles.infoCard}>
               <Text style={styles.infoCardTitle}>Subscription Discounts</Text>
               <Text style={styles.infoCardDescription}>
-                Apply credits towards subscription fees for Money View Pro
+                Apply credits towards subscription fees for UAE Expense Tracker Pro
               </Text>
               <TouchableOpacity style={styles.infoCardButton}>
                 <Text style={styles.infoCardButtonText}>View Plans</Text>

@@ -84,7 +84,7 @@ export function SideMenu({ isVisible, onClose, email = 'user@example.com' }: Sid
             <View style={styles.logo}>
               <Text style={styles.logoText}>M</Text>
             </View>
-            <Text style={styles.appName}>Money View</Text>
+            <Text style={styles.appName}>UAE Expense Tracker</Text>
           </View>
           <Text style={styles.email}>{email}</Text>
         </View>
@@ -93,7 +93,7 @@ export function SideMenu({ isVisible, onClose, email = 'user@example.com' }: Sid
           <MenuItem 
             icon={<CreditCard size={24} color="#555" />} 
             title="Accounts" 
-            route="/(tabs)" 
+            route="/accounts" 
           />
           <MenuItem 
             icon={<FileText size={24} color="#555" />} 
