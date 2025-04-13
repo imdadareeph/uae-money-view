@@ -1,35 +1,46 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { Bell, Filter } from 'lucide-react-native';
-import { Link } from 'expo-router';
+import { SideMenu } from './SideMenu';
 
 export function Navbar() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.leftSection}>
-          <TouchableOpacity style={styles.menuButton}>
-            <View style={styles.menuIcon}>
-              <View style={styles.menuLine} />
-              <View style={styles.menuLine} />
-              <View style={styles.menuLine} />
-            </View>
-          </TouchableOpacity>
-          <Text style={styles.month}>Apr</Text>
-        </View>
+  const [menuVisible, setMenuVisible] = React.useState(false);
 
-        <View style={styles.rightSection}>
-          <Link href="/notifications" asChild>
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
+  return (
+    <>
+      <SideMenu 
+        isVisible={menuVisible} 
+        onClose={() => setMenuVisible(false)} 
+        email="vidzworld@gmail.com"
+      />
+      <View style={styles.container}>
+        <View style={styles.content}>
+          <View style={styles.leftSection}>
+            <TouchableOpacity style={styles.menuButton} onPress={toggleMenu}>
+              <View style={styles.menuIcon}>
+                <View style={styles.menuLine} />
+                <View style={styles.menuLine} />
+                <View style={styles.menuLine} />
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.month}>Apr</Text>
+          </View>
+
+          <View style={styles.rightSection}>
             <TouchableOpacity style={styles.iconButton}>
               <Bell size={24} color="#1F2937" />
             </TouchableOpacity>
-          </Link>
-          <TouchableOpacity style={styles.iconButton}>
-            <Filter size={24} color="#1F2937" />
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.iconButton}>
+              <Filter size={24} color="#1F2937" />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </>
   );
 }
 

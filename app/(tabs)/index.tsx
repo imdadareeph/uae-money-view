@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, StyleSheet, ScrollView, StatusBar } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
 import * as SplashScreen from 'expo-splash-screen';
 import { SpendingSummary } from '@/components/SpendingSummary';
@@ -34,6 +33,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#10B981" barStyle="light-content" />
       <Navbar />
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <BankBalance />
