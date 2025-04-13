@@ -8,13 +8,14 @@ import {
   StatusBar,
   Image
 } from 'react-native';
-import { AppLayout } from '@/components/AppLayout';
 import { 
   ArrowLeft, 
   Edit, 
   MoreVertical
 } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Navbar } from '@/components/Navbar';
 
 interface BankAccount {
   id: string;
@@ -61,6 +62,7 @@ const TABS = ['BANK A/C', 'CREDIT CARDS', 'WALLETS', 'GREEN ACCOUNT'];
 
 export default function AccountsScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const [activeTab, setActiveTab] = useState(0);
   
   const totalBalance = BANK_ACCOUNTS.reduce((sum: number, account: BankAccount) => {
@@ -119,8 +121,9 @@ export default function AccountsScreen() {
   };
   
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingBottom: insets.bottom }]}>
       <StatusBar backgroundColor="#8BC34A" barStyle="light-content" />
+      <Navbar />
       
       {/* Header */}
       <View style={styles.header}>

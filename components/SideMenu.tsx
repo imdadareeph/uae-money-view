@@ -93,43 +93,43 @@ export function SideMenu({ isVisible, onClose, email = 'user@example.com' }: Sid
           <MenuItem 
             icon={<CreditCard size={24} color="#555" />} 
             title="Accounts" 
-            route="/accounts" 
+            route="/(tabs)/accounts" 
           />
           <MenuItem 
             icon={<FileText size={24} color="#555" />} 
             title="Bills" 
-            route="/bills" 
+            route="/(tabs)/bills" 
           />
           <MenuItem 
             icon={<Banknote size={24} color="#555" />} 
             title="Cash" 
-            route="/cash" 
+            route="/(tabs)/cash" 
           />
           <MenuItem 
             icon={<BarChart3 size={24} color="#555" />} 
             title="Spend Summary" 
-            route="/spend-summary" 
+            route="/(tabs)/spend-summary" 
           />
           <MenuItem 
             icon={<Users size={24} color="#555" />} 
             title="Split/Loan" 
-            route="/split-loan" 
+            route="/(tabs)/split-loan" 
           />
           <MenuItem 
             icon={<RefreshCw size={24} color="#555" />} 
             title="Reimbursements" 
-            route="/reimbursements" 
+            route="/(tabs)/reimbursements" 
           />
           <MenuItem 
             icon={<UserPlus size={24} color="#555" />} 
             title="Refer and Earn" 
-            route="/refer" 
+            route="/(tabs)/refer" 
             badge="NEW"
           />
           <MenuItem 
             icon={<Award size={24} color="#555" />} 
             title="Referral credits" 
-            route="/credits" 
+            route="/(tabs)/credits" 
             badge="NEW"
           />
           <MenuItem 
@@ -143,7 +143,7 @@ export function SideMenu({ isVisible, onClose, email = 'user@example.com' }: Sid
           <MenuItem 
             icon={<Mail size={24} color="#555" />} 
             title="Export Data" 
-            route="/export" 
+            route="/(tabs)/export" 
             badge="NEW"
           />
           <View style={styles.settingsSubtext}>

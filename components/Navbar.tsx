@@ -15,7 +15,7 @@ export function Navbar() {
       <SideMenu 
         isVisible={menuVisible} 
         onClose={() => setMenuVisible(false)} 
-        email="vidzworld@gmail.com"
+        email="imdadareeph@gmail.com"
       />
       <View style={styles.container}>
         <View style={styles.content}>
